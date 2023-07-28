@@ -1,0 +1,14 @@
+---
+- name: using Shell Module in host machines
+  hosts: dev
+  become: yes
+  
+  tasks:
+   - name: Open /etc/password file
+     shell: cat passwd
+     args:
+       chdir: "/etc"
+     register: fileout
+     
+   - debug: 
+      msg: "{{fileout.stdout_lines}}"

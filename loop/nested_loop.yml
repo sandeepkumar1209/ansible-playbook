@@ -1,0 +1,21 @@
+---
+- name: Playbook to add multiple users and groups using hash loops
+  hosts: dev
+  tasks:
+  - name: Adding the groups
+    group:
+     name: "{{ item }}"
+     state: present
+    with_items:
+     - student
+     - teacher
+     - scholar
+  - name: Adding local user accounts
+    user:
+     name: "{{ item[0] }}"
+     groups: "{{ item[1] }}"
+     append: yes
+    with_nested:
+     - {babu, nari, liku, suvnedu}
+     - {student, teacher, scholar}
+     

@@ -1,0 +1,14 @@
+---
+- name: Simulate a task to fail on a host
+  hosts: dev
+  ignore_errors: yes
+  tasks:
+  - name: Set a task to fail
+    shell: /bin/false
+  - name: Set a task to run successfully
+    shell: /bin/true
+    notify: success
+  handlers:
+   - name: success
+     debug:
+      msg: "This tasks has been executed successfully"

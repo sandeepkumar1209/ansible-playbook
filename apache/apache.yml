@@ -1,0 +1,21 @@
+---
+- name: Apache Webserver Configuration Playbook
+  hosts: dev
+  tasks:
+  - name: Installing Apache Latest Packages
+    yum:
+     name: httpd
+     state: latest
+  - name: Starting and Enabling Apache HTTPD Service
+    service:
+     name: httpd
+     state: started
+     enabled: true
+  - name: Setting up Apache Web Server
+    template:
+     src: /home/ansible/index.j2
+     dest: /var/www/html/index.html
+  - name: Restarting Apache HTTPD Service
+    service:
+     name: httpd
+     state: restarted

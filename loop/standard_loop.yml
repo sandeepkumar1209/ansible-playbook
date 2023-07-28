@@ -1,0 +1,13 @@
+---
+- name: Ansible standadrd playbook to add user accounts with admin access
+  hosts: dev
+  vars_files:
+  - /home/ansible/loop/users.yml
+  tasks:
+  - name: Adding user accounts with admin access  
+    user:
+     name: "{{ item }}"
+     state: present
+     group: wheel
+    with_items:
+    - "{{ users }}"

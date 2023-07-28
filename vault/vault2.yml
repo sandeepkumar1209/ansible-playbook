@@ -1,0 +1,11 @@
+---
+- name: Playbook for Ansible Vault
+  hosts: dev
+  vars_files:
+   - /home/ansible/crypt.yml
+  tasks:
+   - name: Creating user in dev environment
+     user:
+      name: sham
+      password: "{{pw}}"
+

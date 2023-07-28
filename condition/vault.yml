@@ -1,0 +1,10 @@
+---
+- hosts: all
+  task:
+  - name: Check a file is present
+    shell: ls -ld /etc/
+    register: dir
+
+  - name: Show the output
+    debug:
+     msg: "{{ dir }}"

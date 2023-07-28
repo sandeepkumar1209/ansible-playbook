@@ -1,0 +1,12 @@
+---
+- name: Playbook to Install and Start Nginx
+  hosts: dev
+  user: ansible
+  become: yes
+  tasks:
+  - name: Install nginx
+    action: yum name=nginx state=installed
+  - name: start the nginx service
+    service:
+      name: nginx
+      state: started

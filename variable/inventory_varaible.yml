@@ -1,0 +1,10 @@
+---
+- name: Inventory Variable
+  hosts: RHEL
+  tasks:
+  - name: Creating directories
+    file: 
+     path: "{{ dir }}"
+     state: directory
+  - debug:
+     msg: "{{ dir }}"

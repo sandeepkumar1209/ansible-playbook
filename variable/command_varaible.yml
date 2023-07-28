@@ -1,0 +1,10 @@
+---
+- name: Command line Variable Example
+  hosts: dev
+  tasks:
+   - name: Adding user and applying the password
+     user:
+      name: "{{ user_name}}"
+      state: present
+      password: "{{ password | password_hash ('sha512') }}"
+  

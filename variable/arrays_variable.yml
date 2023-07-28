@@ -1,0 +1,14 @@
+---
+- name: Example of array type playbook varaibles
+  hosts: dev
+  vars:
+   mypkgs:
+    - ftp
+    - vsftpd
+    - zsh
+    - telnet
+  tasks:
+   - name: Installing the packages
+     yum:
+      name: "{{ mypkgs[3] }}"
+      state: installed

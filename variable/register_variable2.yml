@@ -1,0 +1,14 @@
+---
+- name: Registring the variable in Ansible
+  hosts: RHEL
+  tasks:
+   - name: Installing Apache HTTPD package
+     yum:
+      name: httpd
+      state: present
+   - name: Checking Apache Version and Stroring in a variable
+     command: httpd -v
+     register: ver
+    
+   - debug:
+      var: ver.stdout

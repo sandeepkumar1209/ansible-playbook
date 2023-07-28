@@ -1,0 +1,23 @@
+---
+- name: Controls when handlers run using meta directive
+  hosts: dev
+  tasks:
+  - name: Adding the EPEL repository
+    command: sudo yum install -y https://dl.fedoraproject.org/pub/epel/epel-release-latest-9.noarch.rpm 
+  - name: Installing the Nginx webserver
+    yum:
+     name: nginx
+     state: latest
+    notify: 
+     - Start Nginx
+  - name: Flush Handlers
+    meta: flush_handlers
+  - name: Install Neofetch
+    yum:
+     name: neofetch
+     state: latest
+  handlers:
+  - name: Start Nginx
+    service:
+     name: nginx
+     state: started 

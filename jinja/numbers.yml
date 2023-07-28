@@ -1,0 +1,8 @@
+---
+- name: Ansible template with filters example playbook
+  hosts: dev
+  tasks:
+   - name: Using filters with jinja2 template
+     template:
+      src: /home/ansible/jinja/numbers.j2
+      dest: /home/ansible/numbers.txt

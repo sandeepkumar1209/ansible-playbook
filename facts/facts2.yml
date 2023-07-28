@@ -1,0 +1,8 @@
+---
+- name: Hello World printing Playbook
+  hosts: dev
+  gather_facts: false
+  tasks:
+  - name: Printing Hello World
+    debug:
+     msg: Hello World !!!

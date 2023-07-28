@@ -1,0 +1,16 @@
+---
+- name: Playbook to Install and Start Apache and Deploy a Static Website
+  hosts: dev
+  user: ansible
+  become: yes
+  tasks:
+   - name: Install httpd
+     yum: name=httpd state=installed 
+
+   - name: Copy the website template
+     copy:
+       src: /home/ansible/ansible-nginx-demo/html_demo_site-main
+       dest: /var/www/html/
+     
+   - name: Restart the httpd
+     service: name=httpd state=started

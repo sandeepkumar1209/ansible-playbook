@@ -1,0 +1,14 @@
+--- 
+- hosts: dev
+  become: yes
+  tasks:
+  - name: Check the specific directory is available or not
+    stat: 
+     path: /home/testuser1
+    register: dir
+
+  - name: Create a file if the directory exist
+    file:
+     path: /home/testuser1/abc.txt
+     state: touch
+    when: dir.stat.exists

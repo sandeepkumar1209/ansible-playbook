@@ -1,0 +1,16 @@
+---
+- name: Adding user by prompting in the CLI
+  hosts: dev
+  vars_prompt:
+   - name: user_name
+     prompt: "Please Enter the username"
+     private: no
+   - name: password
+     prompt: "Please Enter the password"
+     private: yes
+  tasks:
+  - name: Adding User and applying password 
+    user:
+     name: "{{ user_name }}"
+     state: present
+     password: "{{ password | password_hash ('sha512') }}"

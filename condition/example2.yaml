@@ -1,0 +1,9 @@
+---
+- hosts: dev
+  user: ansible
+  become: yes
+  tasks:
+  - name: Shutdown the Redhat family dev environment machines
+    command: /usr/sbin/shutdown -P
+    when: 
+     - ansible_facts['os_family'] == "RedHat" 

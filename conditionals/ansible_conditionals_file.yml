@@ -1,0 +1,15 @@
+---
+- name: Example of conditionals in Ansible
+  hosts: dev
+  tasks:
+  - name: Checking the existing of the file
+    stat:
+     path: /tmp/ansibleclass.txt
+    register: res
+  - debug:
+     var: res.stat.exists
+  - name: Creating the file if doesnot exist
+    copy:
+     content: This is Ansible tutorial
+     dest: /tmp/ansibleclass.txt
+    when: res.stat.exists == false

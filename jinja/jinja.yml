@@ -1,0 +1,8 @@
+---
+- name: MOTD file creation playbook
+  hosts: dev
+  tasks:
+   - name: Copying the MOTD file from Ansible server to the managed nodes
+     template:
+      src: /home/ansible/jinja/motd.j2
+      dest: /etc/motd

@@ -1,0 +1,16 @@
+---
+- name: Example of mapping type playbook varaibles
+  hosts: dev
+  tasks:
+   - name: Create new user
+     user: 
+      name: '{{ item.name }}'
+      uid: '{{ item.uid }}'
+      state: present
+     loop:
+      - name: A
+        uid: 1020
+      - name: B
+        uid: 1030
+      - name: greta
+        uid: 1040

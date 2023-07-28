@@ -1,0 +1,13 @@
+---
+- name: Registring the ansible variable
+  hosts: RHEL
+  tasks:
+   - name: Check the harware mode
+     command: uname -r
+     register: abc
+   - debug:
+      var: abc.stdout
+   - name: Save the information over all the nodes
+     copy: 
+      content: "This is the hardware mode {{ abc.stdout }}"
+      dest: /tmp/hwmode.txt

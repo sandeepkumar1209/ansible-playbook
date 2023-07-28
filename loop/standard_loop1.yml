@@ -1,0 +1,11 @@
+---
+- name: Ansible standadrd playbook to add user accounts with admin access
+  hosts: dev
+  tasks:
+  - name: Adding user accounts with admin access
+    user:
+     name: "{{ item }}"
+     state: present
+     group: wheel
+    with_lines: cat myusers
+    

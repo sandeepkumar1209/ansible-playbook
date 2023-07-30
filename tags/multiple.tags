@@ -1,0 +1,7 @@
+- name: Restarting Apache HTTPD Service 
+  service:
+   name: httpd
+   state: restarted
+  tags:
+   - restart_tag
+   - service_tag

@@ -1,0 +1,8 @@
+---
+- name: VSFTPD package installation playbook
+  hosts: all
+  tasks:
+  - name: Installing VSFTPD package
+    yum:
+     name: vsftpd
+     state: latest

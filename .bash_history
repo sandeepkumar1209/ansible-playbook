@@ -662,3 +662,219 @@ clear
 vi failed_when.yml
 ansible-playbook failed_when.yml 
 ansible qa -m command -a 'apt list installed apache2'
+ls
+vi index.j2
+pwd
+vi apache.yml
+ansible-playbook apache.yml --syntax-check
+cat apache.yml 
+cat index.j2 
+clear
+ansible-playbook apache.yml 
+ansible-galaxy collection install ansible.posix
+clear
+ansible-playbook apache.yml 
+vi apache.yml 
+ansible-playbook apache.yml 
+ansible dev -m command -a ' rpm -qa |grep python'
+clear
+ansible dev -m command -a ' rpm -qa | grep python'
+clear
+ansible dev -m command -a ' rpm -qa | grep python3'
+clear
+ansible dev -m command -a 'yum install python -y'
+ansible dev -m command -a 'yum install python3 -y'
+vi apache.yml 
+ansible-galaxy collection install ansible.posix
+ansible-galaxy collection install ansible.posix --force
+clear
+ansible-playbook apache.yml 
+python3
+clear
+curl node1
+vi apache.yml 
+ansible-playbook apache.yml 
+curl node1
+curl dev-server
+clear
+curl dev-server
+clear
+sudo cd /etc/ansible/
+ls
+pwd
+cd /etc/ansible/roles/
+ls
+rm -rf  apache/
+sudo rm -rf  apache/
+clear
+ls
+ansible-galaxy init /etc/ansible/roles/apache --offline
+sudo ansible-galaxy init /etc/ansible/roles/apache --offline
+tree apache
+ls
+cd /etc/ansible/roles/tasks
+cd /etc/ansible/roles/apache/tasks/
+ls
+vi install.yml
+ls
+sudo install.yml
+sudo vi  install.yml
+sudo vi  service.yml
+sudo vi  config.yml
+clear
+cat install.yml 
+cat service.yml 
+cat config.yml 
+clear
+sudo vi main.yml 
+sudo vi config.yml 
+cat main.yml 
+clear
+cd /etc/ansible/roles/apache/templates
+ls
+vi index.j2
+sudo index.j2
+sudo vi index.j2
+cat index.j2 
+clear
+cd /etc/ansible/roles/apache/handlers/
+sudo main.yml 
+ls
+sudo vi main.yml 
+cd ..
+cd tasks/
+ll
+sudo vi config.yml 
+cd ..
+cd /etc/ansible/roles/apache/meta/
+ls
+sudo vi  main.yml
+cd /etc/ansible/
+sudo vi setup.yml
+cat setup.yml 
+sudo vi setup.yml
+ansible-playbook setup.yml --syntax-check
+sudo vi /etc/ansible/roles/apache/tasks/install.yml 
+ansible-playbook setup.yml --syntax-check
+sudo vi /etc/ansible/roles/apache/tasks/service.yml 
+sudo vi /etc/ansible/roles/apache/tasks/config.yml 
+clear
+ansible-playbook setup.yml 
+curl dev-server
+cd roles/
+cd apache/
+ll
+sudo cp -r /home/ansible/apache.yml .
+ll
+git init
+sudo git init
+clear
+ll
+ls -la
+clear
+sudo git status
+sudo git add .
+sudo git status
+clear
+sudo git remote https://github.com/sandeepkumar1209/ansible-role.git
+sudo git remote add origin https://github.com/sandeepkumar1209/ansible-role.git
+sudo git config user.name sandeepkumar1209
+sudo git config user.email sandeepkumarpanda487@gmail.com
+sudo git commit -m 'apache'
+clear
+sudo git push origin master
+cd !
+cd ~
+pwd
+ls
+mkdir apache
+mv index.j2 apache.yml apache
+ll
+rm s.txt 
+cat test.sh 
+cat sandy.txt 
+clear
+pwd
+ll
+git init
+ls -la
+clear
+git add .
+git remote add origin https://github.com/sandeepkumar1209/ansible-playbook.git
+git commit -m 'Adding the playbook'
+sudo git commit -m 'Adding the playbook'
+sudo git config user.name sandeepkumar1209
+sudo git config user.email sandeepkumarpanda487@gmail.com
+sudo git commit -m 'Adding the playbook'
+clear
+sudo git push origin master
+sudo init 0
+clear
+sudo yum install python-pip python-devel -y
+sudo pip install boto3
+clear
+ansible-galaxy collection install amazon.aws
+git clone https://github.com/ansible22/aws.git
+ls
+ll
+mkdir dynamic
+cd dynamic/
+clear
+git clone https://github.com/ansible22/aws.git
+ll
+cd aws
+ll
+cat ec2.ini 
+clear
+cat ec2.py 
+clear
+chmod +x ec2.*
+ll
+cleat
+clear
+ll
+sudo chown ansible:ansible xyzpair.pem 
+ll
+clear
+ls
+cd aws
+ll
+vi ec2.py 
+vi ec2.ini 
+sudo vi /etc/ansible/ansible.cfg 
+./ec2.py 
+pip install boto
+clear
+./ec2.py 
+yum install ansible-core
+sudo yum install ansible-core
+./ec2.py 
+vi ec2.py
+reboot
+sudo init 6
+clear
+cd aws
+ll
+ansible --version
+./ec2.py
+ansible-galaxy collection install amazon.aws
+sudo yum update -y
+clear
+ansible --version
+sudo vi /etc/ansible/ansible.cfg
+ll
+./ec2.py
+ansible-galaxy collection install ansible.posix
+ansible-galaxy collection install ansible.posix --force
+clear
+./ec2.py
+pip install ansible
+./ec2.py
+clear
+ansible all --list-hosts
+sudo vi /etc/ansible/ansible.cfg 
+ansible -m ping all
+clear
+sudo vi /etc/ssh/sshd_config
+sudo systemctl restart sshd
+ansible -m ping all

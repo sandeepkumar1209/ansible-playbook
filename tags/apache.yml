@@ -1,0 +1,36 @@
+---
+- name: Apache Webserver Configuration Playbook
+  hosts: dev
+  tasks:
+  - name: Installing Apache Latest Packages
+    yum:
+     name: httpd
+     state: latest
+    tags: pack_tag
+  - name:
+    service: Starting and Enabling the Apache HTTPD Service
+     name: httpd
+     state: started
+     enabled: true
+    tags: serv_tag
+  - name: Setting up Apache Web Server
+    copy:
+     content: "Sandeep is devops engineer in Amazon"
+     dest: /var/www/html/index.html
+    tags: index_tag
+  - name: Restarting Apache HTTPD Service 
+    service:
+     name: httpd
+     state: restarted
+    tags: restart_tag
+  - name: Allowing HTTP Traffic in the Firewall
+    firewalld: 
+     service: http
+     permanaent: yes
+     state: enabled
+    tags: firewall_tag
+  - name: Reload the Firewall Service
+    service:
+     name: firewalld
+     state: reloaded
+    tags: firewall_tag

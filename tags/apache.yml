@@ -7,8 +7,8 @@
      name: httpd
      state: latest
     tags: pack_tag
-  - name:
-    service: Starting and Enabling the Apache HTTPD Service
+  - name: Starting and Enabling the Apache HTTPD Service
+    service: 
      name: httpd
      state: started
      enabled: true
